@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './assets/images/logo-twitter.svg';
+import './styles.css';
 import './App.css';
 import 'normalize.css';
 
