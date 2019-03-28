@@ -1,34 +1,24 @@
 import React, {Component} from 'react';
-import logo from './assets/images/logo-twitter.svg';
 import './App.css';
 import 'normalize.css';
+import twitter from "./assets/images/twitter.svg";
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <div className="login">
-
-                    <div className="logo-twitter"><img src={logo} alt=""/></div>
-
-                    <h1 className="page-title">Log in no twitter</h1>
-
-                    <div className="input">
-                        <label htmlFor=""><input type="text" placeholder="hshsh" title="title"/></label>
-                    </div>
-
-                    <div className="input">
-                        <label htmlFor=""><input type="password" placeholder="hshsh" title="title"/></label>
-                    </div>
-
-                    <button className="button-submit">Log in</button>
-
-                    <div className="actions">
-                        <a href="#">Forgotten your Password</a> .
-                        <a href="#">Sign up for Twitter</a>
-                    </div>
-
-                </div>
+            <div className={"login-wrapper"}>
+                <img src={twitter} alt="GoTwitter" />
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder={"Nome de Usuário"}
+                    />
+                    <input
+                        type="password"
+                        placeholder={"password"}
+                    />
+                    <button type={"submit"}>Entrar</button>
+                </form>
             </div>
         );
     }
