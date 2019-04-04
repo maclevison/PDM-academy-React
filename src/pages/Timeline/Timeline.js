@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import avatar from './assets/images/avatar.jpeg'
-import twitter from './assets/images/twitter.svg'
-import like from './assets/images/like.svg'
+import avatar from '../../assets/images/avatar.jpeg'
+import twitter from '../../assets/images/twitter.svg'
+import like from '../../assets/images/like.svg'
 import './Timeline.css';
 import 'normalize.css';
 
