@@ -3,7 +3,7 @@ import './Login.css';
 import 'normalize.css';
 import twitter from "../../assets/images/twitter.svg";
 
-import {setToken} from '../../services/auth'
+import {setToken, getToken} from '../../services/auth'
 
 class Login extends Component {
     state = {
@@ -18,10 +18,14 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        const { username, password, message } = this.state
-        !!username && !!password ? setToken('12334') :
-            this.setState({message: 'utilizador ou password incorretos'})
-            !!message && this.props.history.push('/timeline')
+        const { username, password } = this.state
+        console.log(!!username)
+        console.log(!!password)
+        !!username && !!password
+            ? username === 'marcelo' && password === '1234' ? setToken('1234') : this.setState({message: 'utilizador ou password incorretos'})
+            : this.setState({message: 'utilizador ou password não preenchidos'})
+
+        if(getToken()) this.props.history.push('/timeline')
     }
 
     render() {
@@ -37,7 +41,11 @@ class Login extends Component {
                         onChange={e => this.handleInputChange(e, 'username')}
                         placeholder={"Nome de Usuário"}
                     />
-                    {!!message && <span>{message}</span>}
+                    {!!message &&
+                        <div className={'login-message'}>
+                            <span className={'message'}>{message}</span>
+                        </div>
+                    }
                     <input
                         type="password"
                         value={this.state.password}

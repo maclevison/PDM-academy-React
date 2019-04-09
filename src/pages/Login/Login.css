@@ -41,3 +41,13 @@
 .login-wrapper form button:hover {
     background: #42a1db;
 }
+
+.login-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message {
+    font-size: 15px;
+    color: red;
+}
