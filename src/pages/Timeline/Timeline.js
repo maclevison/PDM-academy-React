@@ -6,10 +6,17 @@ import like from '../../assets/images/like.svg'
 import './Timeline.css';
 import 'normalize.css';
 
+import {removeToken} from '../../services/auth'
+
 class Timeline extends Component {
+    handleLogout = () => {
+        removeToken()
+        this.props.history.push('/timeline')
+    }
     render() {
         return (
             <div className={'container'}>
+                <button onClick={this.handleLogout}>SAIR</button>
                 <div className={'logo'}>
                     <img src={twitter} alt=''/>
                 </div>
