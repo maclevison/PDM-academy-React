@@ -7,6 +7,13 @@
     align-items: center;
 }
 
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
 .logo {
     display: flex;
     justify-content: center;

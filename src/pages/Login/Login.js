@@ -19,8 +19,6 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         const { username, password } = this.state
-        console.log(!!username)
-        console.log(!!password)
         !!username && !!password
             ? username === 'marcelo' && password === '1234' ? setToken('1234') : this.setState({message: 'utilizador ou password incorretos'})
             : this.setState({message: 'utilizador ou password não preenchidos'})
